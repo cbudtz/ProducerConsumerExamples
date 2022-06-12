@@ -1,8 +1,16 @@
-package x_data;
+package data;
 
 public class DataDTO {
     private String someData;
     private int someID;
+
+    @Override
+    public String toString() {
+        return "DataDTO{" +
+                "someData='" + someData + '\'' +
+                ", someID=" + someID +
+                '}';
+    }
 
     public int getSomeID() {
         return someID;

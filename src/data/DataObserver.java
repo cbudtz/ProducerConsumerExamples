@@ -1,4 +1,4 @@
-package x_data;
+package data;
 
 public interface DataObserver {
     void handle(DataDTO data);

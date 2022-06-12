@@ -1,4 +1,4 @@
-package x_data;
+package data;
 
 public interface DataObservable {
 
