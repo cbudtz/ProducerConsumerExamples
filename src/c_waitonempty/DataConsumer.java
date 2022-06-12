@@ -14,7 +14,8 @@ public class DataConsumer implements Runnable{
 
     public void enqueue(DataDTO data){
         synchronized (dataList){
-            // In case buffer is overrun, we just drop data
+            // In case buffer is overrun, we just drop data -
+            // This is instead of Pausing the producer if the queue is full. (fullLock)
             if (dataList.size()<MAX_SIZE) {
                 dataList.add(data);
             }
