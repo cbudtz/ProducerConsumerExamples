@@ -21,7 +21,7 @@ public class DataGenerator implements Runnable, DataObservable{
                 if (this.observer != null) {
                     //Some random data:
                     DataDTO dataDTO = new DataDTO();
-                    dataDTO.setSomeID((int) Math.random() * 1000);
+                    dataDTO.setSomeID((int) (Math.random() * 1000));
                     dataDTO.setSomeData(UUID.randomUUID().toString());
                     //System.out.println("Generated some data: " + dataDTO);
                     observer.handle(dataDTO);

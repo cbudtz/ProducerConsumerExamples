@@ -8,8 +8,8 @@ import java.util.List;
 
 public class DataConsumer implements Runnable{
     private static final int MAX_SIZE = 1500;
-    LinkedList<DataDTO> dataList = new LinkedList<>();
-    DataDAO dataDAO = new DataDAO();
+    private final LinkedList<DataDTO> dataList = new LinkedList<>();
+    private final DataDAO dataDAO = new DataDAO();
     private final Object emptyLock = new Object();
 
     public void enqueue(DataDTO data){

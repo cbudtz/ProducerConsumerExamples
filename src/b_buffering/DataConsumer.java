@@ -7,8 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DataConsumer implements Runnable{
-    LinkedList<DataDTO> dataList = new LinkedList<>();
-    DataDAO dataDAO = new DataDAO();
+    private final LinkedList<DataDTO> dataList = new LinkedList<>();
+    private final DataDAO dataDAO = new DataDAO();
 
     public void enqueue(DataDTO data){
         synchronized (dataList){
@@ -23,10 +23,8 @@ public class DataConsumer implements Runnable{
             List<DataDTO> listCopy;
             synchronized (dataList){
                 //Take a copy of list and empty it;
-                listCopy = new LinkedList<>();
-                listCopy.addAll(dataList);
+                listCopy = new LinkedList<>(dataList);
                 dataList.clear();
-
             }
             dataDAO.save(listCopy);
         }
